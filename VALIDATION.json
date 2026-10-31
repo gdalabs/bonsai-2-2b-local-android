@@ -1,0 +1,83 @@
+{
+  "schema": 2,
+  "date": "2026-10-31",
+  "status": "experimental non-debuggable preview; Android debug signing identity",
+  "version": "0.2.4-preview-bundled",
+  "application_id": "org.gdalabs.bonsailocal",
+  "bundled_model": {
+    "name": "Official Ternary Bonsai 2 2B Q2_0",
+    "version": "683f7be2629342a50987627b40881e54761a2430",
+    "base_architecture": "qwen35",
+    "gguf_format": "Q2_0",
+    "sha256": "c2893fa6f951daee8b7263d5f49b455e57989ef56417a22125b03566dc560650",
+    "size_bytes": 546689504,
+    "required_backend": "prism-5ae2e169-cpu",
+    "chat_template": "embedded",
+    "context_length": 4096,
+    "special_tokens": [
+      "<|im_start|>",
+      "<|im_end|>",
+      "<think>",
+      "</think>"
+    ],
+    "provenance": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-2B-gguf/tree/683f7be2629342a50987627b40881e54761a2430",
+    "trained_context_length": 262144
+  },
+  "checks": {
+    "arm64_release_build": true,
+    "instrumentation_apk_compiled": true,
+    "jvm_tests": {
+      "tests": 39,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint_errors": 0,
+    "lint_warnings": 4,
+    "no_internet_permission": true,
+    "arm64_only": true,
+    "elf_and_zip_16k_alignment": true,
+    "bundled_model_size_and_sha256": true,
+    "non_debuggable": true,
+    "app_and_test_signatures_verified": true,
+    "previous_release_signing_identity_preserved": true,
+    "signing_certificate_sha256": "70192b3610ce8c6867b5511f588c1f1f9193710851e76fda02b0effd508aad28",
+    "packaged_license_assets_match_source": 8,
+    "small_apk_no_model_and_same_signing_identity": true
+  },
+  "ui_previews": {
+    "renderer": "Paparazzi 2.0.0-alpha04",
+    "device_layout": "Pixel 5",
+    "locale": "en",
+    "count": 4,
+    "content": "Fixed English sample conversation; no model inference; not physical-device captures"
+  },
+  "remaining": [
+    "Actual Android phone inference and instrumentation of this version",
+    "Device RAM, latency, thermal and battery measurements",
+    "Production signing"
+  ],
+  "artifacts": [
+    {
+      "name": "Bonsai-2-2B-Local-Android-0.2.4-arm64-Q2_0-bundled-preview.apk",
+      "bytes": 575931437,
+      "sha256": "158f1fafa5763d30bf78696de76a0266685ca1a1cada92222782cc58d1cfc089"
+    },
+    {
+      "name": "Bonsai-2-2B-Local-Android-0.2.4-arm64-androidTest.apk",
+      "bytes": 818515,
+      "sha256": "df4f8c13dc440fab4bf6c8ef10ba377d6cd9ffbea47a9d7d59119e3b70a756f8"
+    },
+    {
+      "name": "Bonsai-2-2B-Local-Android-0.2.4-arm64-small-preview.apk",
+      "bytes": 29241295,
+      "sha256": "d2c4f9e4fcad3cd1b9159ffefe1fce0d1832c58d6beb167d1dbaee9e2f426d7a"
+    }
+  ],
+  "inherited_native_validation": {
+    "official_reference_outputs": 3,
+    "hadamard_tests": 34,
+    "ternary_tests": 450,
+    "native_source_changed_in_this_version": false
+  }
+}

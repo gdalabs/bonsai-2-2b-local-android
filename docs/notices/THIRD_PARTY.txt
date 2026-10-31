@@ -32,3 +32,5 @@ See Bonsai-model-Apache-2.0.txt and Bonsai-model-NOTICE.txt.
 AndroidX / Jetpack Compose: Apache-2.0.
 Kotlin / kotlinx.coroutines: Apache-2.0.
 
+
+Markdown: commonmark-java 0.31.0 (core, GFM tables and strikethrough), BSD-2-Clause. Full text: commonmark-BSD-2-Clause.txt. Shared UI source: Apache-2.0, Copyright 2026 GDA Labs.

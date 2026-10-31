@@ -1,6 +1,6 @@
 # Hugging Face publication
 
-Primary source and issue tracker: https://github.com/gdalabs/bonsai-local-android . Keep the original MeshMind development repository private.
+Primary source and issue tracker: https://github.com/gdalabs/bonsai-2-2b-local-android . Keep the original MeshMind development repository private.
 
 The owner authorized a public static Space at https://huggingface.co/spaces/GDALabs/Bonsai-Local-Android and an English HF Post. A static Space is a distribution/documentation page, not a cloud inference endpoint or a newly trained model. Follow the official static SDK guide: https://huggingface.co/docs/hub/spaces-sdks-static .
 

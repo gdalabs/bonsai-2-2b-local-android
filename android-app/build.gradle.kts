@@ -37,8 +37,8 @@ android {
         applicationId = "org.gdalabs.bonsailocal"
         minSdk = 28
         targetSdk = 36
-        versionCode = 5
-        versionName = "0.2.3-preview" + if (bundledModel != null) "-bundled" else ""
+        versionCode = 6
+        versionName = "0.2.4-preview" + if (bundledModel != null) "-bundled" else ""
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         ndk { abiFilters += if (emulatorBuild) "x86_64" else "arm64-v8a" }
         externalNativeBuild { cmake {
@@ -66,6 +66,9 @@ if (prepareBundledModel != null) tasks.matching { it.name == "preBuild" }.config
 androidComponents { beforeVariants(selector().withBuildType("release")) { if (emulatorBuild) it.enable = false } }
 dependencyLocking { lockAllConfigurations() }
 dependencies {
+    implementation("org.commonmark:commonmark-ext-gfm-strikethrough:0.31.0")
+    implementation("org.commonmark:commonmark-ext-gfm-tables:0.31.0")
+    implementation("org.commonmark:commonmark:0.31.0")
     implementation(platform("androidx.compose:compose-bom:2025.08.00"))
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.foundation:foundation")

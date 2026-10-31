@@ -98,7 +98,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
             val before = mutable.value
             check(before.messages.size < 198) { "Conversation limit reached; reset it" }
             val messages = before.messages + ChatMessage("user", text)
-            mutable.update { it.copy(messages = messages + ChatMessage("assistant", ""), generating = true, stats = "") }
+            mutable.update { it.copy(messages = messages + ChatMessage("assistant", "", before.settings.thinking), generating = true, stats = "") }
             val decoder = Utf8Stream()
             val output = StringBuilder()
             val battery = getApplication<Application>().getSystemService(BatteryManager::class.java)
@@ -112,7 +112,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
                     val now = System.nanoTime()
                     if (now - lastPublish > 50_000_000L) {
                         val current = output.toString()
-                        mutable.update { it.copy(messages = messages + ChatMessage("assistant", current)) }
+                        mutable.update { it.copy(messages = messages + ChatMessage("assistant", current, before.settings.thinking)) }
                         lastPublish = now
                     }
                     foreground.get() && !stopped.get()
@@ -123,7 +123,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
                 val thermal = if (android.os.Build.VERSION.SDK_INT >= 29) power.currentThermalStatus.toString() else "unavailable"
                 mutable.update { it.copy(stats = "$stats\nProcess CPU ms: ${Process.getElapsedCpuTime() - cpuStart}; charge delta uAh: $charge; thermal status: $thermal") }
             } finally {
-                val finalMessages = messages + ChatMessage("assistant", output.toString())
+                val finalMessages = messages + ChatMessage("assistant", output.toString(), before.settings.thinking)
                 mutable.update { it.copy(messages = finalMessages) }
                 history.write(finalMessages)
             }

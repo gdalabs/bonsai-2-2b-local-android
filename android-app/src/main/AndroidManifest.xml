@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
-    <application android:label="Bonsai Local" android:icon="@drawable/ic_bonsai" android:theme="@android:style/Theme.Material.NoActionBar"
+    <application android:label="Bonsai 2 2B Local" android:icon="@drawable/ic_bonsai" android:theme="@android:style/Theme.Material.NoActionBar"
         android:allowBackup="false" android:fullBackupContent="false" android:usesCleartextTraffic="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:supportsRtl="true">

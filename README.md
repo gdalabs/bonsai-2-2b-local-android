@@ -4,10 +4,27 @@ An independent, fully offline Android app by **GDA Labs**, using official **Pris
 
 This is an unofficial application, not a new trained model and not endorsed by PrismML. It is extracted from MeshMind's working AI runtime; the messenger and model-editing experiments are outside this source tree.
 
+
+## UI previews
+
+Actual Compose UI rendered with a fixed **English** sample question and answer. These are layout previews, not physical-device screenshots or model-quality evidence. [Capture details and reproduction](tools/ui-preview).
+
+<p>
+  <img src="docs/screenshots/chat-light.png" width="240" alt="Light chat UI with an English sample question and formatted reply" />
+  <img src="docs/screenshots/chat-dark.png" width="240" alt="Dark chat UI with the same English sample conversation" />
+</p>
+<p>
+  <img src="docs/screenshots/models.png" width="240" alt="Installed model and local load controls" />
+  <img src="docs/screenshots/settings.png" width="240" alt="Local privacy, reply length and generation settings" />
+</p>
+
+Markdown replies display headings, bold, lists, tables, links and code blocks. Reasoning, when provided, is collapsed separately from the final answer. Code and reply text can be copied. System light/dark mode, model management and generation controls share the same interface.
+
+
 ## Downloads and source
 
-- [APK releases](https://github.com/gdalabs/bonsai-local-android/releases)
-- [Source and issues](https://github.com/gdalabs/bonsai-local-android)
+- [APK releases](https://github.com/gdalabs/bonsai-2-2b-local-android/releases)
+- [Source and issues](https://github.com/gdalabs/bonsai-2-2b-local-android)
 - [GDA Labs](https://gdalabs.dev/)
 
 The bundled APK includes official Q2_0 weights. App size and model size differ. Corresponding source is available in this repository and in the release source archive.
@@ -15,11 +32,11 @@ The bundled APK includes official Q2_0 weights. App size and model size differ. 
 ## First use
 
 1. Install the **model-bundled preview APK**. Allow Android's package installer to install it if prompted.
-2. Open Bonsai Local and wait for local model verification/copying.
+2. Open Bonsai 2 2B Local and wait for local model verification/copying.
 3. On Chat, tap **Load model & start**. No Import operation is needed for the bundled APK.
 4. Ask a question. Try airplane mode with Wi-Fi off and USB disconnected.
 
-The small APK requires a separately provisioned official GGUF. Open Models → Import or replace a model → choose Q2_0 and select the GGUF. Custom compatible models require their matching checksum manifest. Unsupported formats fail clearly.
+The small APK requires a separately provisioned official GGUF. Open Models → Import a model → choose Q2_0 and select the GGUF. Custom compatible models require their matching checksum manifest. Unsupported formats fail clearly.
 
 Bonsai Local has a separate package ID (`org.gdalabs.bonsailocal`) and can coexist with MeshMind. Histories and model files are separate; private app data is not migrated automatically.
 
@@ -48,7 +65,7 @@ PrismML's backend implements the model-specific ternary operators, Hadamard tran
 
 ## Long responses and output limits
 
-The output-token limit is a generation budget, not a character limit. Reaching it stops generation even if the answer is unfinished. Version 0.2.2 defaults to 512 tokens and offers 256/512/1024 controls on Chat. The output budget can be changed without unloading the model and takes effect on the next reply. Other memory/context settings still require unloading. A user can ask the model to continue, but this is a new conversational turn, not an exact decoder resume. Prompt and output must fit the context window. A larger budget permits more work and does not guarantee a complete or accurate answer.
+The output-token limit is a generation budget, not a character limit. Reaching it stops generation even if the answer is unfinished. The app defaults to 512 tokens and offers 256/512/1024 controls on Chat. The output budget can be changed without unloading the model and takes effect on the next reply. Other memory/context settings still require unloading. A user can ask the model to continue, but this is a new conversational turn, not an exact decoder resume. Prompt and output must fit the context window. A larger budget permits more work and does not guarantee a complete or accurate answer.
 
 
 ## Contributing

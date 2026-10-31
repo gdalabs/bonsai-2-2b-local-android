@@ -85,3 +85,7 @@ The owner renamed the HF model repository to https://huggingface.co/GDALabs/Bons
 ## Published Apache preview handoff
 
 Release https://github.com/gdalabs/bonsai-local-android/releases/tag/v0.2.3-preview is public with all six assets uploaded. Both APK server digests match the tested artifacts. The HF upload ZIP includes the approved formal name **Bonsai 2 2B Local for Android**, Apache application notices, corresponding source and links to https://huggingface.co/GDALabs/Bonsai-2-2B-Local-Android . Every enclosed SHA256SUMS entry passed. The HF repository is public with Apache-2.0 metadata, but application files still require manual upload; extract the ZIP and upload its contents. The app label remains Bonsai Local. No new Android-device test or HF Post publication is claimed.
+
+## 0.2.4 UI preview
+
+Refreshed the Compose interface, rendered Markdown and collapsed model reasoning, kept encrypted history backwards compatible, and added four English UI previews with a reproducible Paparazzi project. Model identity and native inference source are unchanged. See VALIDATION.md and VALIDATION.json for current build evidence. Actual phone execution of this UI version is pending.

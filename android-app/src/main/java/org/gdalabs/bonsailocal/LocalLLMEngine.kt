@@ -1,6 +1,6 @@
 package org.gdalabs.bonsailocal
 
-data class ChatMessage(val role: String, val content: String)
+data class ChatMessage(val role: String, val content: String, val reasoning: Boolean = false)
 data class ModelConfig(val path: String, val format: String, val specialTokens: List<String>)
 data class GenerationSettings(
     val threads: Int = 2, val context: Int = 2048, val maxTokens: Int = 512,
